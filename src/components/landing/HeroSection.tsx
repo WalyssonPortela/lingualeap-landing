@@ -34,7 +34,7 @@ export function HeroSection({ expirationDate }: HeroSectionProps) {
           <p className="text-sm text-center text-muted-foreground">Mais de 500 alunos já estão aplicando e aprovando!</p>
         </div>
 
-        <div className="mt-12 relative aspect-square max-w-lg mx-auto rounded-lg overflow-hidden">
+        <div className="mt-12 relative aspect-[1/1] max-w-lg mx-auto rounded-lg overflow-hidden">
           {heroImage && (
             <Image
               src={heroImage.imageUrl}

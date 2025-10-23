@@ -57,28 +57,6 @@ export function TestimonialsSection() {
     }
   ];
 
-  const newAvatars = [
-    {
-      id: "avatar-lucas",
-      description: "Avatar for Lucas Ferreira",
-      imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjExNDc1MzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      imageHint: "man portrait"
-    },
-    {
-      id: "avatar-mariana",
-      description: "Avatar for Mariana Costa",
-      imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTE0NzUzOXww&ixlib=rb-4.1.0&q=80&w=1080",
-      imageHint: "woman portrait"
-    }
-  ]
-
-  // Add new avatars to placeholder images if they don't exist
-  newAvatars.forEach(avatar => {
-    if (!PlaceHolderImages.some(p => p.id === avatar.id)) {
-      PlaceHolderImages.push(avatar);
-    }
-  });
-
   return (
     <section className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4 md:px-8">

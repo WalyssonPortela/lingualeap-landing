@@ -3,6 +3,13 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export function TestimonialsSection() {
   const testimonials = [
@@ -34,7 +41,43 @@ export function TestimonialsSection() {
       rating: 5,
       quote: "Sempre tive dificuldade com inglês, mas esse kit mudou tudo. Consigo praticar ouvindo no trânsito e já sinto uma confiança enorme para falar.",
     },
+    {
+      name: "Lucas Ferreira",
+      location: "25 anos, Porto Alegre/RS",
+      avatarId: "avatar-lucas",
+      rating: 5,
+      quote: "O material é muito bem organizado. A combinação do ebook com o audiobook faz toda a diferença para fixar o conteúdo. Valeu cada centavo!",
+    },
+    {
+      name: "Mariana Costa",
+      location: "31 anos, Salvador/BA",
+      avatarId: "avatar-mariana",
+      rating: 5,
+      quote: "O melhor investimento que fiz para minha carreira. Entender as 1000 palavras mais comuns me abriu portas em reuniões e e-mails.",
+    }
   ];
+
+  const newAvatars = [
+    {
+      id: "avatar-lucas",
+      description: "Avatar for Lucas Ferreira",
+      imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjExNDc1MzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      imageHint: "man portrait"
+    },
+    {
+      id: "avatar-mariana",
+      description: "Avatar for Mariana Costa",
+      imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTE0NzUzOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      imageHint: "woman portrait"
+    }
+  ]
+
+  // Add new avatars to placeholder images if they don't exist
+  newAvatars.forEach(avatar => {
+    if (!PlaceHolderImages.some(p => p.id === avatar.id)) {
+      PlaceHolderImages.push(avatar);
+    }
+  });
 
   return (
     <section className="py-16 md:py-24 bg-card">
@@ -42,35 +85,49 @@ export function TestimonialsSection() {
         <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
           Quem Já Experimentou, Comprova: Resultados Reais!
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {testimonials.map((testimonial, index) => {
-            const avatarImage = PlaceHolderImages.find(p => p.id === testimonial.avatarId);
-            return (
-              <Card key={index} className="bg-background shadow-lg border">
-                <CardContent className="p-6">
-                  <blockquote className="space-y-4">
-                    <div className="flex">
-                      {Array(5).fill(0).map((_, i) => (
-                        <Star key={i} className={`h-5 w-5 ${i < testimonial.rating ? 'text-accent fill-accent' : 'text-muted-foreground/30'}`} />
-                      ))}
-                    </div>
-                    <p className="text-lg text-foreground italic">"{testimonial.quote}"</p>
-                    <footer className="flex items-center gap-4 pt-4">
-                       <Avatar className="h-14 w-14">
-                        {avatarImage && <AvatarImage src={avatarImage.imageUrl} alt={testimonial.name} data-ai-hint={avatarImage.imageHint} />}
-                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="font-bold text-base">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                      </div>
-                    </footer>
-                  </blockquote>
-                </CardContent>
-              </Card>
-            )
-          })}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-4xl mx-auto"
+        >
+          <CarouselContent>
+            {testimonials.map((testimonial, index) => {
+              const avatarImage = PlaceHolderImages.find(p => p.id === testimonial.avatarId);
+              return (
+                <CarouselItem key={index} className="md:basis-1/2">
+                   <div className="p-1">
+                    <Card className="bg-background shadow-lg border h-full">
+                      <CardContent className="p-6 flex flex-col h-full">
+                        <blockquote className="space-y-4 flex flex-col flex-grow">
+                          <div className="flex">
+                            {Array(5).fill(0).map((_, i) => (
+                              <Star key={i} className={`h-5 w-5 ${i < testimonial.rating ? 'text-accent fill-accent' : 'text-muted-foreground/30'}`} />
+                            ))}
+                          </div>
+                          <p className="text-lg text-foreground italic flex-grow">"{testimonial.quote}"</p>
+                          <footer className="flex items-center gap-4 pt-4">
+                            <Avatar className="h-14 w-14">
+                              {avatarImage && <AvatarImage src={avatarImage.imageUrl} alt={testimonial.name} data-ai-hint={avatarImage.imageHint} />}
+                              <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <p className="font-bold text-base">{testimonial.name}</p>
+                              <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                            </div>
+                          </footer>
+                        </blockquote>
+                      </CardContent>
+                    </Card>
+                   </div>
+                </CarouselItem>
+              )
+            })}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
         <div className="text-center mt-12 bg-primary/10 p-4 rounded-lg max-w-md mx-auto">
             <p className="text-lg font-bold text-primary">Avaliação Média: 4.9/5 estrelas</p>
             <p className="text-muted-foreground">Baseado em mais de 500 alunos satisfeitos!</p>

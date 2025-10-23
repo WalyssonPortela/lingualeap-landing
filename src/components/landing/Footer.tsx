@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-8 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
           <span className="text-xl font-bold font-headline">
-             <span className="text-accent">Faster</span>
+             EnglishFaster
           </span>
         </div>
         <div className="flex justify-center flex-wrap gap-4 text-sm mb-4">

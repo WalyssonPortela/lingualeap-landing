@@ -6,7 +6,7 @@ export function Header() {
       <div className="container mx-auto">
         <Link href="/" className="flex items-center gap-2 w-fit">
           <h1 className="text-2xl font-bold font-headline">
-            <span className="text-accent">Faster</span>
+            EnglishFaster
           </h1>
         </Link>
       </div>

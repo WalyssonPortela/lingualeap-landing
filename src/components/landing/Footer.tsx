@@ -12,7 +12,6 @@ export function Footer() {
           </span>
         </div>
         <div className="flex justify-center flex-wrap gap-4 text-sm mb-4">
-          <Link href="#" className="hover:text-primary transition-colors">Política de Privacidade</Link>
           <Link href="#" className="hover:text-primary transition-colors">Termos de Uso</Link>
           <Link href="#" className="hover:text-primary transition-colors">Contato</Link>
         </div>

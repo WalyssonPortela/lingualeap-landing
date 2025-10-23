@@ -19,7 +19,7 @@ export function GuaranteeSection() {
           <p className="text-muted-foreground mb-8 text-lg">
             Temos tanta confiança em nosso método que oferecemos uma Garantia Incondicional de 7 Dias. Experimente, aplique as técnicas e se em 7 dias você não sentir uma melhora significativa no seu entendimento do inglês, nós devolvemos 100% do seu investimento, sem burocracia ou letras miúdas. Seu risco é ZERO!
           </p>
-          <Button asChild size="lg" variant="outline" className="text-lg font-bold h-14 px-10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105">
+          <Button asChild size="lg" className="text-lg font-bold h-14 px-10 bg-gradient-to-br from-yellow-300 to-accent text-black hover:from-yellow-400 hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-lg">
             <Link href="#offer">
               SIM! QUERO EXPERIMENTAR SEM RISCOS!
             </Link>

@@ -8,7 +8,7 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       name: "Renata Mendonça",
-      location: "43 anos, Recife/PE",
+      location: "34 anos, Recife/PE",
       avatarId: "avatar-renata",
       rating: 5,
       quote: "Nunca imaginei que aprenderia inglês tão rápido! O áudio é perfeito para quem tem pouco tempo. Já entendo muito mais!",

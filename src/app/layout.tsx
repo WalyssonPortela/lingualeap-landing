@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { SalesNotification } from '@/components/landing/SalesNotification';
 
 export const metadata: Metadata = {
   title: 'EnglishFaster',
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         {children}
         <Toaster />
+        <SalesNotification />
       </body>
     </html>
   );

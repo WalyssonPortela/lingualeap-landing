@@ -24,7 +24,7 @@ export function OfferSection() {
             <div className="bg-primary/10 rounded-lg p-6 mb-8">
               <div className="flex items-center justify-center gap-4 mb-2">
                 <span className="text-2xl md:text-3xl text-muted-foreground line-through">R$199,99</span>
-                <span className="text-5xl md:text-7xl font-black text-primary">R$19,90</span>
+                <span className="text-5xl md:text-7xl font-black text-primary">R$27,90</span>
               </div>
               <p className="text-sm text-muted-foreground">Pagamento único, acesso vitalício.</p>
             </div>

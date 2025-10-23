@@ -40,7 +40,7 @@ export function OfferSection() {
               </ul>
             </div>
             
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-xl font-bold h-16 px-12 shadow-lg w-full max-w-md animate-pulse">
+            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white text-xl font-bold h-16 px-12 shadow-lg w-full max-w-md animate-pulse">
               <Link href="#">
                 COMPRAR AGORA E DESTRAVAR O INGLÊS!
               </Link>

@@ -20,6 +20,20 @@ export function TestimonialsSection() {
       rating: 5,
       quote: "Finalmente um método que funciona! Em poucos dias, já consigo pegar o sentido de músicas e filmes. É incrível!",
     },
+    {
+      name: "Carlos Martins",
+      location: "42 anos, Belo Horizonte/MG",
+      avatarId: "avatar-carlos",
+      rating: 5,
+      quote: "Estou impressionado com a rapidez que meu vocabulário aumentou. O método é direto ao ponto e muito eficaz. Recomendo demais!",
+    },
+    {
+      name: "Ana Pereira",
+      location: "38 anos, Rio de Janeiro/RJ",
+      avatarId: "avatar-ana",
+      rating: 5,
+      quote: "Sempre tive dificuldade com inglês, mas esse kit mudou tudo. Consigo praticar ouvindo no trânsito e já sinto uma confiança enorme para falar.",
+    },
   ];
 
   return (

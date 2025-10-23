@@ -1,0 +1,23 @@
+import { Sparkles } from 'lucide-react';
+import Link from 'next/link';
+
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-foreground text-background py-8">
+      <div className="container mx-auto px-4 md:px-8 text-center">
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <Sparkles className="h-6 w-6 text-primary" />
+          <span className="text-xl font-bold font-headline">Fluência Rápida</span>
+        </div>
+        <div className="flex justify-center flex-wrap gap-4 text-sm mb-4">
+          <Link href="#" className="hover:text-primary transition-colors">Política de Privacidade</Link>
+          <Link href="#" className="hover:text-primary transition-colors">Termos de Uso</Link>
+          <Link href="#" className="hover:text-primary transition-colors">Contato</Link>
+        </div>
+        <p className="text-sm text-muted-foreground">&copy; {currentYear} Fluência Rápida. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  );
+}

@@ -65,7 +65,7 @@ export function SalesNotification() {
       </div>
       <div>
         <p className="text-sm text-foreground">
-          <span className="font-bold">{notification?.name}</span> de {notification?.location} acabou de adquirir o EnglishFaster.
+          <span className="font-bold">{notification?.name}</span> de {notification?.location}, acabou de adquirir o kit!
         </p>
       </div>
     </div>

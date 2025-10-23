@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'EnglishFaster',
+  title: 'LinguaLeap',
   description: 'Desvende o Inglês em Apenas 7 Dias com as 1000 Palavras Essenciais!',
 };
 

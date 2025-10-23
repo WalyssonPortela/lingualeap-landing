@@ -2,7 +2,7 @@
   "placeholderImages": [
     {
       "id": "product-mockups",
-      "description": "Mockups of the English learning product on a tablet, e-reader, and smartphone.",
+      "description": "Three electronic devices display the same Portuguese text, 'Destrave seu Inglês com as 1000 Palavras mais USADAS' (Unlock your English with the 1000 most USED Words), against a clean white background. In the foreground, a black smartphone with a narrow bezel is angled slightly to the right, showing the text clearly on its screen. To its left, a larger black e-reader or tablet, also with a narrow bezel, lies flat on the surface, displaying the same text. In the background, a silver tablet stands upright on a silver stand, presenting the text prominently on its larger screen. All devices are powered on and illuminated, showcasing the content. The lighting is bright and even, casting subtle shadows that highlight the devices' forms and create a sense of depth against the pristine white surface.",
       "imageUrl": "https://storage.googleapis.com/aai-web-samples/mockups.png",
       "imageHint": "product mockups"
     },
@@ -41,6 +41,12 @@
       "description": "Avatar for Mariana Costa",
       "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTE0NzUzOXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-sabrina",
+      "description": "Avatar for Sabrina",
+      "imageUrl": "https://storage.googleapis.com/aai-web-samples/avatar-sabrina.png",
+      "imageHint": "woman smiling"
     }
   ]
 }

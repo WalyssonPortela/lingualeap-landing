@@ -54,6 +54,13 @@ export function TestimonialsSection() {
       avatarId: "avatar-mariana",
       rating: 5,
       quote: "O melhor investimento que fiz para minha carreira. Entender as 1000 palavras mais comuns me abriu portas em reuniões e e-mails.",
+    },
+    {
+      name: "Sabrina",
+      location: "27 anos, Curitiba/PR",
+      avatarId: "avatar-sabrina",
+      rating: 5,
+      quote: "Estou amando! O método é super prático e eu já consigo formar frases que antes pareciam impossíveis. Recomendo muito!",
     }
   ];
 

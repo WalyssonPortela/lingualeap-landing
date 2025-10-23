@@ -9,7 +9,7 @@ type HeroSectionProps = {
 };
 
 export function HeroSection({ expirationDate }: HeroSectionProps) {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-image');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'product-mockups');
   
   return (
     <section className="bg-card py-12 md:py-20 text-center">

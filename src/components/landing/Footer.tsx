@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-8 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
           <span className="text-xl font-bold font-headline">
-             <span className="text-primary">Lingua</span><span className="text-accent">Leap</span>
+             <span className="text-primary">English</span><span className="text-accent">Faster</span>
           </span>
         </div>
         <div className="flex justify-center flex-wrap gap-4 text-sm mb-4">
@@ -16,7 +16,7 @@ export function Footer() {
           <Link href="#" className="hover:text-primary transition-colors">Termos de Uso</Link>
           <Link href="#" className="hover:text-primary transition-colors">Contato</Link>
         </div>
-        <p className="text-sm text-muted-foreground">&copy; {currentYear} LinguaLeap. Todos os direitos reservados.</p>
+        <p className="text-sm text-muted-foreground">&copy; {currentYear} EnglishFaster. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

@@ -48,7 +48,7 @@ export function ExitIntentPopup() {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogContent className="max-w-md text-center border-yellow-400 border-2">
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-3xl font-black font-headline text-primary">
+          <AlertDialogTitle className="text-3xl font-black font-headline text-foreground">
             Espere! Uma Oferta Especial!
           </AlertDialogTitle>
           <AlertDialogDescription className="text-lg text-muted-foreground pt-2">
@@ -67,7 +67,7 @@ export function ExitIntentPopup() {
         <AlertDialogFooter className="flex-col sm:justify-center gap-2">
            <AlertDialogAction asChild className="w-full">
             <Link 
-              href="https://pay.kiwify.com.br/uMyx6AE" 
+              href="https://pay.kiwify.com.br/fNsrcop" 
               className="bg-green-600 hover:bg-green-700 text-white text-xl font-bold h-16 px-12 shadow-lg animate-pulse"
             >
               SIM! QUERO POR R$19,90!

@@ -21,7 +21,7 @@ export function GuaranteeSection() {
           </p>
           <Button asChild size="lg" className="text-lg font-bold h-14 px-10 bg-gradient-to-br from-yellow-300 to-accent text-black hover:from-yellow-400 hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-lg">
             <Link href="#offer">
-              SIM! QUERO EXPERIMENTAR SEM RISCOS!
+              Sim! Quero Experimentar
             </Link>
           </Button>
         </div>

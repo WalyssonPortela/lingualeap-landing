@@ -27,7 +27,7 @@ export function HeroSection({ expirationDate }: HeroSectionProps) {
 
         <div className="mt-10 flex flex-col items-center gap-4">
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-xl font-bold h-16 px-10 shadow-lg transform hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
-            <Link href="#offer">
+            <Link href="https://pay.kiwify.com.br/uMyx6AE">
               SIM! QUERO FALAR INGLÊS AGORA!
             </Link>
           </Button>

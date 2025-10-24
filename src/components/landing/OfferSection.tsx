@@ -41,7 +41,7 @@ export function OfferSection() {
             </div>
             
             <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white text-xl font-bold h-16 px-12 shadow-lg w-full max-w-md animate-pulse">
-              <Link href="#">
+              <Link href="https://pay.kiwify.com.br/uMyx6AE">
                 Compre Agora e Destrave
               </Link>
             </Button>

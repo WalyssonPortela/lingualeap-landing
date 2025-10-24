@@ -8,6 +8,7 @@ import { GuaranteeSection } from '@/components/landing/GuaranteeSection';
 import { OfferSection } from '@/components/landing/OfferSection';
 import { Footer } from '@/components/landing/Footer';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
+import { ExitIntentPopup } from '@/components/landing/ExitIntentPopup';
 
 export default function Home() {
   const expirationDate = new Date();
@@ -28,6 +29,7 @@ export default function Home() {
         </div>
       </main>
       <Footer />
+      <ExitIntentPopup />
     </div>
   );
 }

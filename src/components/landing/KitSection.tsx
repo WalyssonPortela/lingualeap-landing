@@ -11,7 +11,7 @@ export function KitSection() {
     {
       icon: Headphones,
       title: "Audiobook Profissional",
-      description: "Audiobook '1000 Palavras Mais Usadas' (MP3): Ouça a pronúncia nativa, repita e aprenda em qualquer lugar – no carro, na academia, em casa!",
+      description: "Audiobook '1000 Frases Mais Usadas' (MP3): Ouça a pronúncia nativa, repita e aprenda em qualquer lugar – no carro, na academia, em casa!",
     },
     {
       icon: Download,

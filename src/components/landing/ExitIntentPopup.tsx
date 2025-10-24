@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,33 +13,41 @@ import {
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
+const INACTIVITY_TIMEOUT = 45000; // 45 seconds
+
 export function ExitIntentPopup() {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleMouseOut = (event: MouseEvent) => {
-      // Check if mouse is leaving the viewport
-      if (
-        event.clientY <= 0 ||
-        event.clientX <= 0 ||
-        event.clientX >= window.innerWidth ||
-        event.clientY >= window.innerHeight
-      ) {
-        const alreadyShown = sessionStorage.getItem('exitIntentShown');
-        if (!alreadyShown) {
-          setIsOpen(true);
-          sessionStorage.setItem('exitIntentShown', 'true');
-        }
-      }
-    };
-
-    document.addEventListener('mouseout', handleMouseOut);
-
-    return () => {
-      document.removeEventListener('mouseout', handleMouseOut);
-    };
+  const showPopup = useCallback(() => {
+    const alreadyShown = sessionStorage.getItem('exitIntentShown');
+    if (!alreadyShown) {
+      setIsOpen(true);
+      sessionStorage.setItem('exitIntentShown', 'true');
+    }
   }, []);
 
+  useEffect(() => {
+    let inactivityTimer: NodeJS.Timeout;
+
+    const resetTimer = () => {
+      clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(showPopup, INACTIVITY_TIMEOUT);
+    };
+
+    // Events that reset the inactivity timer
+    const events = ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'];
+    
+    events.forEach(event => window.addEventListener(event, resetTimer));
+    
+    // Initial timer start
+    resetTimer();
+
+    return () => {
+      clearTimeout(inactivityTimer);
+      events.forEach(event => window.removeEventListener(event, resetTimer));
+    };
+  }, [showPopup]);
+  
   if (!isOpen) {
     return null;
   }

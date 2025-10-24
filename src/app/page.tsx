@@ -19,7 +19,7 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <HeroSection expirationDate={expirationDate.toISOString()} />
-        <div className="space-y-4">
+        <div className="flex flex-col">
           <ScrollReveal><ProblemSolutionSection /></ScrollReveal>
           <ScrollReveal><MethodSection /></ScrollReveal>
           <ScrollReveal><KitSection /></ScrollReveal>

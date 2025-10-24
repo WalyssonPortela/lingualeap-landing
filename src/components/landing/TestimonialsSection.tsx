@@ -65,7 +65,7 @@ export function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-card overflow-hidden">
+    <section className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
           Quem Já Experimentou, Comprova: Resultados Reais!
@@ -75,25 +75,25 @@ export function TestimonialsSection() {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-5xl mx-auto"
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => {
               const avatarImage = PlaceHolderImages.find(p => p.id === testimonial.avatarId);
               return (
-                <CarouselItem key={index} className="md:basis-1/2">
-                   <div className="p-1">
-                    <Card className="bg-background shadow-lg border h-full">
-                      <CardContent className="p-6 flex flex-col h-full">
-                        <blockquote className="space-y-4 flex flex-col flex-grow">
-                          <div className="flex">
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                   <div className="p-2 h-full">
+                    <Card className="bg-card shadow-lg h-full flex flex-col">
+                      <CardContent className="p-6 flex flex-col flex-grow">
+                          <div className="flex mb-4">
                             {Array(5).fill(0).map((_, i) => (
-                              <Star key={i} className={`h-5 w-5 ${i < testimonial.rating ? 'text-accent fill-accent' : 'text-muted-foreground/30'}`} />
+                              <Star key={i} className={`h-5 w-5 ${i < testimonial.rating ? 'text-accent fill-current' : 'text-muted-foreground/30'}`} />
                             ))}
                           </div>
-                          <p className="text-lg text-foreground italic flex-grow">"{testimonial.quote}"</p>
-                          <footer className="flex items-center gap-4 pt-4">
-                            <Avatar className="h-14 w-14">
+                          <blockquote className="space-y-4 flex flex-col flex-grow">
+                          <p className="text-base text-foreground italic flex-grow">"{testimonial.quote}"</p>
+                          <footer className="flex items-center gap-4 pt-4 border-t">
+                            <Avatar className="h-14 w-14 border-2 border-primary/50">
                               {avatarImage && <AvatarImage src={avatarImage.imageUrl} alt={testimonial.name} data-ai-hint={avatarImage.imageHint} />}
                               <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                             </Avatar>
@@ -110,10 +110,10 @@ export function TestimonialsSection() {
               )
             })}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="ml-[-1rem] md:ml-[-2.5rem]" />
+          <CarouselNext className="mr-[-1rem] md:mr-[-2.5rem]" />
         </Carousel>
-        <div className="text-center mt-12 bg-primary/10 p-4 rounded-lg max-w-md mx-auto">
+        <div className="text-center mt-12 bg-primary/10 p-4 rounded-lg max-w-md mx-auto border border-primary/20">
             <p className="text-lg font-bold text-primary">Avaliação Média: 4.9/5 estrelas</p>
             <p className="text-muted-foreground">Baseado em mais de 500 alunos satisfeitos!</p>
         </div>

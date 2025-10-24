@@ -29,16 +29,21 @@ export function KitSection() {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-8">
-        <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
-          Seu Kit Completo Para a Fluência Imediata Inclui:
-        </h2>
+        <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">
+            Seu Kit Completo Para a Fluência Imediata
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+            Tudo que você precisa para dominar o inglês essencial, em um pacote completo e fácil de usar.
+            </p>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-            <Card key={index} className="text-center flex flex-col items-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-              <CardHeader>
-                <div className="flex items-center justify-center text-primary mb-2 bg-primary/10 p-4 rounded-full w-fit mx-auto">
+            <Card key={index} className="text-center flex flex-col items-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card">
+              <CardHeader className="items-center">
+                <div className="flex items-center justify-center text-primary bg-primary/10 p-4 rounded-full w-fit mb-4">
                   <item.icon className="h-8 w-8" />
-                  {item.extraIcon && <item.extraIcon className="h-8 w-8 ml-2" />}
+                  {item.extraIcon && <item.extraIcon className="h-6 w-6 ml-1 opacity-80" />}
                 </div>
                 <CardTitle className="font-headline text-xl">{item.title}</CardTitle>
               </CardHeader>

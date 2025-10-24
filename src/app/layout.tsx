@@ -2,6 +2,20 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { SalesNotification } from '@/components/landing/SalesNotification';
+import { Poppins, Lato } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const fontHeadline = Poppins({
+  subsets: ['latin'],
+  weight: ['700', '900'],
+  variable: '--font-headline',
+});
+
+const fontBody = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-body',
+});
 
 export const metadata: Metadata = {
   title: 'EnglishFaster',
@@ -14,13 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased">
+    <html lang="pt-BR" className="scroll-smooth">
+      <body className={cn("font-body antialiased", fontHeadline.variable, fontBody.variable)}>
         {children}
         <Toaster />
         <SalesNotification />

@@ -19,7 +19,7 @@ export function HeroSection({ expirationDate }: HeroSectionProps) {
         </div>
 
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-black text-center max-w-4xl mx-auto leading-tight">
-          Desvende o Inglês em 7 Dias: Entenda, Fale e Conquiste a Fluência com as 1000 Palavras Essenciais!
+          Destrave o Inglês em 7 Dias: Entenda, Fale e Conquiste a Fluência com as 1000 Palavras Essenciais!
         </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground text-center max-w-3xl mx-auto">
           Chega de cursos caros e anos de estudo. O método comprovado que ignora o excesso e foca no que realmente importa.

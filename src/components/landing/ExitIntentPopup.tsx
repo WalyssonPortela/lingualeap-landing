@@ -59,7 +59,7 @@ export function ExitIntentPopup() {
         <div className="my-6">
             <div className="bg-primary/10 rounded-lg p-6">
                 <p className="text-sm text-muted-foreground">De <span className="line-through">R$27,90</span> por apenas:</p>
-                <p className="text-7xl font-black text-primary">R$19,90</p>
+                <p className="text-7xl font-black text-primary">R$12,90</p>
                 <p className="text-xs text-muted-foreground mt-1">Acesso vitalício. Oferta única.</p>
             </div>
         </div>
@@ -70,7 +70,7 @@ export function ExitIntentPopup() {
               href="https://pay.kiwify.com.br/fNsrcop" 
               className="bg-green-600 hover:bg-green-700 text-white text-xl font-bold h-16 px-12 shadow-lg animate-pulse"
             >
-              SIM! QUERO POR R$19,90!
+              SIM! QUERO POR R$12,90!
             </Link>
           </AlertDialogAction>
           <Button variant="link" onClick={() => setIsOpen(false)} className="text-muted-foreground">

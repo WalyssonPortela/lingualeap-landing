@@ -42,7 +42,7 @@ export function OfferSection() {
             
             <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white text-xl font-bold h-16 px-12 shadow-lg w-full max-w-md animate-pulse">
               <Link href="#">
-                COMPRAR AGORA E DESTRAVAR O INGLÊS!
+                Compre Agora e Destrave
               </Link>
             </Button>
 

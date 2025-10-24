@@ -22,7 +22,7 @@ export function OfferSection() {
             <p className="text-lg text-muted-foreground mb-6">Sua chance de transformar o Inglês por um preço inacreditável.</p>
             
             <div className="bg-primary/10 rounded-lg p-6 mb-8">
-              <div className="flex items-center justify-center gap-4 mb-2">
+              <div className="flex flex-col items-center justify-center mb-2">
                 <span className="text-2xl md:text-3xl text-muted-foreground line-through">R$199,99</span>
                 <span className="text-5xl md:text-7xl font-black text-primary">R$19,90</span>
               </div>

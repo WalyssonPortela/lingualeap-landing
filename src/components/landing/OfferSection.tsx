@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 export function OfferSection() {
   const benefits = [
     "Ebook Completo: 1000 Palavras Essenciais",
-    "Audiobook Profissional: Pronúncia Nativa",
+    "Audiobook de 1000 Frases: Pronúncia Simples",
     "Tradução e Pronúncia Lado a Lado",
     "Download Imediato e Acesso Vitalício",
   ];

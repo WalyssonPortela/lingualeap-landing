@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
+      <head>
+        <meta name="description" content={metadata.description as string} />
+      </head>
       <body className={cn("font-body antialiased", fontHeadline.variable, fontBody.variable)}>
         {children}
         <Toaster />

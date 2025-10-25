@@ -11,14 +11,11 @@ import { ScrollReveal } from '@/components/landing/ScrollReveal';
 import { ExitIntentPopup } from '@/components/landing/ExitIntentPopup';
 
 export default function Home() {
-  const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + 7);
-
   return (
     <div className="flex flex-col min-h-screen bg-background font-body text-foreground">
       <Header />
       <main className="flex-grow">
-        <HeroSection expirationDate={expirationDate.toISOString()} />
+        <HeroSection />
         <div className="flex flex-col">
           <ScrollReveal><ProblemSolutionSection /></ScrollReveal>
           <ScrollReveal><MethodSection /></ScrollReveal>

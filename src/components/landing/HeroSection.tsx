@@ -1,16 +1,23 @@
+
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { CountdownTimer } from './CountdownTimer';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ArrowRight, ShoppingCart } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
-type HeroSectionProps = {
-  expirationDate: string;
-};
-
-export function HeroSection({ expirationDate }: HeroSectionProps) {
+export function HeroSection() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'product-mockups');
+  const [expirationDate, setExpirationDate] = useState<string | null>(null);
+
+  useEffect(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 7);
+    setExpirationDate(date.toISOString());
+  }, []);
   
   return (
     <section className="bg-background pt-12 pb-16 md:pt-20 md:pb-24 text-foreground">

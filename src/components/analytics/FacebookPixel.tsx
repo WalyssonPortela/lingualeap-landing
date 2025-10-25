@@ -5,7 +5,7 @@ import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
 const FacebookPixel = () => {
-  const [pixelId, setPixelId] = useState('325200975897775');
+  const [pixelId, setPixelId] = useState('835626109234219');
   const pathname = usePathname();
 
   useEffect(() => {

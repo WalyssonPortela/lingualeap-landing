@@ -11,5 +11,9 @@ export const locations = [
     "Fortaleza, CE", "Brasília, DF", "Florianópolis, SC", "Manaus, AM",
     "Goiânia, GO", "Belém, PA", "Vitória, ES", "Natal, RN", 
     "Campo Grande, MS", "Maceió, AL", "João Pessoa, PB", "Teresina, PI",
-    "Aracaju, SE"
+    "Aracaju, SE", "Guarulhos, SP", "Campinas, SP", "São Gonçalo, RJ",
+    "São Bernardo do Campo, SP", "Duque de Caxias, RJ", "Nova Iguaçu, RJ",
+    "Santo André, SP", "Osasco, SP", "Sorocaba, SP", "Uberlândia, MG",
+    "São José dos Campos, SP", "Ribeirão Preto, SP", "Jaboatão dos Guararapes, PE",
+    "Contagem, MG", "Joinville, SC"
 ];

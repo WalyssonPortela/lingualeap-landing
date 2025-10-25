@@ -621,7 +621,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 const FacebookPixel = ()=>{
     _s();
-    const [pixelId, setPixelId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('325200975897775');
+    const [pixelId, setPixelId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('835626109234219');
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "FacebookPixel.useEffect": ()=>{
@@ -698,7 +698,7 @@ const FacebookPixel = ()=>{
         ]
     }, void 0, true);
 };
-_s(FacebookPixel, "HFe1VOFBtn8HREJ+P4vstsH68H8=", false, function() {
+_s(FacebookPixel, "z28/dj42L6sh8uAH81wNIFcGSic=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"]
     ];

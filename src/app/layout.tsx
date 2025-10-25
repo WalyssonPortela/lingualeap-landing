@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { SalesNotification } from '@/components/landing/SalesNotification';
 import { Poppins, Lato } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import FacebookPixel from '@/components/analytics/FacebookPixel';
 
 const fontHeadline = Poppins({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({
         {children}
         <Toaster />
         <SalesNotification />
+        <FacebookPixel />
       </body>
     </html>
   );

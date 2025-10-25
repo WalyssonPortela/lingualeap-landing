@@ -51,7 +51,7 @@ function CountdownTimer({ expirationDate }) {
         if (value !== undefined && value >= 0) {
             // Don't show if value is 0 unless it's seconds
             if (value > 0 || interval === 'segundos') {
-                timerComponents.push(`${value} ${interval}`);
+                timerComponents.push(`${value.toString().padStart(2, '0')} ${interval}`);
             }
         }
     });

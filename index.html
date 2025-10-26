@@ -9,9 +9,7 @@
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '835626109234219'); 
-  fbq('track', 'PageView');
-  fbq('track', 'InitiateCheckout');
-
+  fbq('track', 'PageView'); 
 </script>
 <noscript>
   <img height="1" width="1" style="display:none"
@@ -26,15 +24,12 @@
     
     if (botaoComprar) {
       botaoComprar.addEventListener('click', function(e) {
-        e.preventDefault(); // impede o redirecionamento imediato
+        e.preventDefault();
 
-        // envia o evento pro Meta Pixel
-        fbq('track', 'Purchase', { 
-          value: 19.90, // altera pro preço real do seu produto se for diferente
-          currency: 'BRL'
-        });
+        // envia evento de início de checkout
+        fbq('track', 'InitiateCheckout');
 
-        // espera 0.5s pro evento enviar antes de redirecionar
+        // espera meio segundo pro Meta registrar antes de redirecionar
         setTimeout(() => {
           window.location.href = botaoComprar.href;
         }, 500);

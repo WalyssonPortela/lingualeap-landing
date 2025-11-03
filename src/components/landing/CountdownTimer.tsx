@@ -2,48 +2,66 @@
 
 import { useState, useEffect } from 'react';
 
-type CountdownTimerProps = {
-  expirationDate: string | null;
-};
+const COUNTDOWN_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-export function CountdownTimer({ expirationDate }: CountdownTimerProps) {
-  const calculateTimeLeft = () => {
-    if (!expirationDate) return {};
+export function CountdownTimer() {
+  const getInitialExpiration = () => {
+    if (typeof window !== 'undefined') {
+      const storedExpiration = localStorage.getItem('promoExpiration');
+      if (storedExpiration && new Date(storedExpiration).getTime() > Date.now()) {
+        return new Date(storedExpiration).getTime();
+      }
+    }
+    return Date.now() + COUNTDOWN_DURATION;
+  };
+  
+  const [expirationTime, setExpirationTime] = useState<number | null>(null);
+  const [timeLeft, setTimeLeft] = useState<{dias: number, horas: number, minutos: number, segundos: number}>({dias: 0, horas: 0, minutos: 0, segundos: 0});
 
-    const difference = +new Date(expirationDate) - +new Date();
-    let timeLeft = {};
+  useEffect(() => {
+    const initialTime = getInitialExpiration();
+    setExpirationTime(initialTime);
+    localStorage.setItem('promoExpiration', new Date(initialTime).toISOString());
+  }, []);
 
-    if (difference > 0) {
-      timeLeft = {
+  useEffect(() => {
+    if (!expirationTime) return;
+
+    const calculateTimeLeft = () => {
+      const difference = expirationTime - Date.now();
+      
+      if (difference <= 0) {
+        // Reset timer
+        const newExpirationTime = Date.now() + COUNTDOWN_DURATION;
+        setExpirationTime(newExpirationTime);
+        localStorage.setItem('promoExpiration', new Date(newExpirationTime).toISOString());
+        return {
+          dias: 0,
+          horas: 23,
+          minutos: 59,
+          segundos: 59,
+        };
+      }
+
+      return {
         dias: Math.floor(difference / (1000 * 60 * 60 * 24)),
         horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutos: Math.floor((difference / 1000 / 60) % 60),
         segundos: Math.floor((difference / 1000) % 60),
       };
-    }
-
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState<{dias?: number, horas?: number, minutos?: number, segundos?: number}>({});
-
-  useEffect(() => {
-    if (!expirationDate) {
-      setTimeLeft({});
-      return;
     };
     
-    // Initial calculation on client mount to avoid hydration mismatch
+    // Initial calculation
     setTimeLeft(calculateTimeLeft());
     
     const timer = setInterval(() => {
-      setTimeLeft(calculateTime-Left());
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [expirationDate]);
+  }, [expirationTime]);
 
-  if (!expirationDate) {
+  if (!expirationTime) {
     return <span className="font-mono">Calculando...</span>;
   }
 
@@ -51,19 +69,13 @@ export function CountdownTimer({ expirationDate }: CountdownTimerProps) {
 
   Object.entries(timeLeft).forEach(([interval, value]) => {
     if (value !== undefined && value >= 0) {
-      // Don't show if value is 0 unless it's seconds
-      if (value > 0 || interval === 'segundos') {
+      if (value > 0 || interval === 'segundos' || (timeLeft.dias === 0 && timeLeft.horas === 0 && timeLeft.minutos === 0)) {
         const pluralInterval = value !== 1 ? interval : interval.slice(0, -1);
         timerComponents.push(`${value.toString().padStart(2, '0')} ${pluralInterval}`);
       }
     }
   });
-
-  if (!timerComponents.length && expirationDate) {
-    return <span className="font-mono">Oferta Expirada!</span>;
-  }
   
-  // Format to "D dias, H horas, M minutos e S segundos"
   let formattedTime = timerComponents.join(', ');
   const lastCommaIndex = formattedTime.lastIndexOf(',');
   if (lastCommaIndex !== -1) {

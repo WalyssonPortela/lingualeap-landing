@@ -11,13 +11,6 @@ import { useState, useEffect } from 'react';
 
 export function HeroSection() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'product-mockups');
-  const [expirationDate, setExpirationDate] = useState<string | null>(null);
-
-  useEffect(() => {
-    const date = new Date();
-    date.setDate(date.getDate() + 7);
-    setExpirationDate(date.toISOString());
-  }, []);
   
   return (
     <section className="bg-background pt-12 pb-16 md:pt-20 md:pb-24 text-foreground">
@@ -25,7 +18,7 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center md:text-left">
             <div className="inline-block bg-primary/10 border border-primary/20 text-primary font-bold py-2 px-4 rounded-lg mb-6 text-sm sm:text-base">
-              Oferta Expira em: <CountdownTimer expirationDate={expirationDate} />
+              Oferta Expira em: <CountdownTimer />
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-black leading-tight">
@@ -42,7 +35,7 @@ export function HeroSection() {
                   Compre Agora
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="h-16 px-8 w-full sm:w-auto">
+              <Button asChild variant="outline" size="lg" className="h-16 px-8 w-full smw-auto">
                 <Link href="#offer">
                   Ver Oferta
                   <ArrowRight className="ml-2 h-5 w-5" />

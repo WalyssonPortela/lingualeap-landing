@@ -66,8 +66,9 @@ export function ExitIntentPopup() {
         
         <div className="my-6">
             <div className="bg-primary/10 rounded-lg p-6">
-                <p className="text-sm text-muted-foreground">De <span className="line-through">R$27,90</span> por apenas:</p>
+                <p className="text-sm text-muted-foreground">De <span className="line-through">R$19,90</span> por apenas:</p>
                 <p className="text-7xl font-black text-primary">R$12,90</p>
+                <p className="text-3xl font-semibold text-primary mt-2">ou 2x de R$6,79</p>
                 <p className="text-xs text-muted-foreground mt-1">Acesso vitalício. Oferta única.</p>
             </div>
         </div>
